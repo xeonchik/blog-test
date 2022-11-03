@@ -21,6 +21,13 @@ class ApplicationRouterFactory
             return $controller->index($request);
         });
 
+        // Not enough time to implement paths like /view/{$post}
+        $router->addRoute(Router::GET, '/view', function ($request) use ($container) {
+            /** @var BlogController $controller */
+            $controller = $container->get(BlogController::class);
+            return $controller->view($request);
+        });
+
         $router->addRoute(Router::GET, '/login', function ($request) use ($container) {
             /** @var AuthController $controller */
             $controller = $container->get(AuthController::class);

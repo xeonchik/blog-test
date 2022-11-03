@@ -3,6 +3,12 @@ html, body {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px;
+}
+
 a {
 	color: #6E6E6E;
 	text-decoration: none;
@@ -42,7 +48,36 @@ nav li {
 }
 
 nav li.right {
-	background: red;
 	align-self: center;
 	justify-self: center;
+}
+
+.post {
+	background: #dae8fc;
+	margin: 20px 0;
+	padding: 15px;
+}
+
+.post .title {
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.post .image {
+	margin-left: 20px;
+}
+
+.post a {
+	color: inherit;
+	display: flex;
+}
+
+.post .bottom {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.post-detailed {
+
 }

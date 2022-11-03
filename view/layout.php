@@ -3,7 +3,7 @@
  * @var string $content
  */
 ?>
-<html lang="en">
+<html lang="de">
 <head>
     <title>Blog</title>
     <link rel="stylesheet" href="style.css">

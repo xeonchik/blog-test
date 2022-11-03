@@ -21,8 +21,35 @@ class PostMapper implements MapperInterface
     }
 
     /**
+     * Get single post by ID
+     *
+     * @param int $id
+     *
+     * @return Post|null
      * @throws Exception
+     */
+    public function get(int $id): ?Post
+    {
+        $qb = $this->db->createQueryBuilder();
+        $qb->select('*')
+            ->from(self::TABLE_NAME)
+            ->where('id = ?')
+            ->setParameter(0, $id);
+
+        $result = $qb->executeQuery()->fetchAssociative();
+
+        if (!$result) {
+            return null;
+        }
+
+        return $this->hydrate($result);
+    }
+
+    /**
+     * Get all posts
+     *
      * @return Post[]
+     * @throws Exception
      */
     public function getPosts(): array
     {
