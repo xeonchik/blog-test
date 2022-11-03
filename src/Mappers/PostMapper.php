@@ -11,8 +11,6 @@ class PostMapper implements MapperInterface
 {
     public const TABLE_NAME = 'posts';
 
-    protected string $entityClass = Post::class;
-
     protected Connection $db;
 
     public function __construct(Connection $connection)

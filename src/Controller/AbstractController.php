@@ -17,6 +17,7 @@ class AbstractController
 
     protected function renderWithLayout(View $view): HtmlResponse
     {
-        return new HtmlResponse($view->renderLayout(null, $view->render()));
+        $rendered = $view->render();
+        return new HtmlResponse($view->renderLayout(null, $rendered));
     }
 }

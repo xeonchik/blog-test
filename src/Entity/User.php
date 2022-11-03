@@ -3,15 +3,59 @@ declare(strict_types=1);
 
 namespace Blog\Entity;
 
-class User
+use Blog\Authentication\UserInterface;
+
+class User implements UserInterface
 {
-    public int $id;
+    protected int $id;
 
-    public string $name;
+    protected string $name;
 
-    public string $login;
+    protected string $login;
 
-    public string $password;
+    protected string $password;
+
+    protected ?string $salt;
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param string $login
+     */
+    public function setLogin(string $login): void
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @param string|null $salt
+     */
+    public function setSalt(?string $salt): void
+    {
+        $this->salt = $salt;
+    }
 
     /**
      * @return int
@@ -44,4 +88,21 @@ class User
     {
         return $this->password;
     }
+
+    public function getUsername(): string
+    {
+        return $this->getLogin();
+    }
+
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    public function eraseCredentials()
+    {
+        $this->password = '';
+        $this->salt = '';
+    }
+
 }

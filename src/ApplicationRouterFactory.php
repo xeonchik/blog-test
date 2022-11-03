@@ -31,6 +31,12 @@ class ApplicationRouterFactory
         $router->addRoute(Router::GET, '/login', function ($request) use ($container) {
             /** @var AuthController $controller */
             $controller = $container->get(AuthController::class);
+            return $controller->loginForm($request);
+        });
+
+        $router->addRoute(Router::POST, '/login', function ($request) use ($container) {
+            /** @var AuthController $controller */
+            $controller = $container->get(AuthController::class);
             return $controller->login($request);
         });
 

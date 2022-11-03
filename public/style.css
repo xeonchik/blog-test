@@ -81,3 +81,25 @@ nav li.right {
 .post-detailed {
 
 }
+
+.login-form {
+	background: #dae8fc;
+	margin-top: 30px;
+	padding: 30px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.login-form label {
+	margin-bottom: 15px;
+}
+
+.login-form .error {
+	background: #fff5f5;
+	color: red;
+	border: 1px solid red;
+	font-weight: bold;
+	padding: 20px;
+	margin-bottom: 20px;
+}

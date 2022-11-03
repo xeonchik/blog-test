@@ -5,7 +5,7 @@ namespace Blog\Entity;
 
 class Post
 {
-    private const CUT_LENGTH = 500;
+    private const CUT_LENGTH = 300;
 
     public int $id;
 
@@ -25,6 +25,12 @@ class Post
             return substr($this->text, 0, self::CUT_LENGTH) . '...';
         }
 
+        return $this->text;
+    }
+
+    public function getTextAsHtml()
+    {
+        // if it's in markdown format, we can convert it here
         return $this->text;
     }
 

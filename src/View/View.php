@@ -11,6 +11,26 @@ class View
 
     protected string $template = '';
 
+    protected array $vars = [];
+
+    /**
+     * @param string $template
+     */
+    public function setTemplate(string $template): void
+    {
+        $this->template = $template;
+    }
+
+    public function __set($name, $value)
+    {
+        $this->vars[$name] = $value;
+    }
+
+    public function __get($name)
+    {
+        return $this->vars[$name] ?? null;
+    }
+
     /**
      * @throws \Exception
      */
