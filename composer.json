@@ -2,14 +2,21 @@
     "name": "xeonc/blog-test",
     "autoload": {
         "psr-4": {
-            "Xeonc\\BlogTest\\": "src/"
+            "Blog\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Максим Тюфтин",
-            "email": "mtyuftin@sberhealth.ru"
+            "name": "Maxim Tyuftin",
+            "email": "xeonchik@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "psr/http-message": "^1.0",
+        "psr/container": "^2.0",
+        "laminas/laminas-diactoros": "^2.17"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    }
 }
