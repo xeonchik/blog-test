@@ -1,0 +1,15 @@
+{
+    "name": "xeonc/blog-test",
+    "autoload": {
+        "psr-4": {
+            "Xeonc\\BlogTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Максим Тюфтин",
+            "email": "mtyuftin@sberhealth.ru"
+        }
+    ],
+    "require": {}
+}
