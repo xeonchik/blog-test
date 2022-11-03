@@ -21,6 +21,14 @@ class Container implements \Psr\Container\ContainerInterface
         $this->services[$serviceId] = $instance;
     }
 
+    /**
+     * Add service factory (via closure)
+     *
+     * @param string $serviceId
+     * @param \Closure $closure
+     *
+     * @return void
+     */
     public function addClosure(string $serviceId, \Closure $closure)
     {
         $this->closures[$serviceId] = $closure;

@@ -1,0 +1,48 @@
+
+html, body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #6E6E6E;
+	text-decoration: none;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 10px;
+	align-items: end;
+}
+
+header .logo {
+	padding: 30px;
+	background: #ebebeb;
+}
+
+header .title {
+	margin-left: 15px;
+	font-size: 16pt;
+}
+
+nav {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+nav ul {
+	padding: 10px 0;
+	display: flex;
+	list-style-type: none;
+	flex-direction: row;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav li.right {
+	background: red;
+	align-self: center;
+	justify-self: center;
+}
