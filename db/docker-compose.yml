@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  mariadb:
+    image: mariadb:10.2
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: blog
+      MYSQL_USER: blog
+      MYSQL_PASSWORD: blog
+    ports:
+      - '3306:3306'
+    networks:
+      - backend
+    restart: on-failure
+
+networks:
+  backend:
+    driver: bridge
